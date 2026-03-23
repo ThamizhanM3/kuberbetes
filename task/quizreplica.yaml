@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: quizreplica
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: quiz01
+  template:
+    metadata:
+      name: quiz01
+      labels:
+        app: quiz01
+    spec:
+      containers:
+        - name: quiz
+          image: rajcosivadevops/ustimage
+          ports:
+            - containerPort: 80

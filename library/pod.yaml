@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: libpod
+  labels:
+    app: libapp
+spec:
+  containers:
+    - name: libcon
+      image: thamizhanm3/library:v1
+      ports:
+        - containerPort: 80

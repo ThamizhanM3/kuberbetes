@@ -1,0 +1,12 @@
+# failed-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: failed-pod
+spec:
+  restartPolicy: Never
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["sh", "-c", "exit 1"]  # Deliberately exit non-zero
+

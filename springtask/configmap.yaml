@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: m3config
+data:
+  APP_MESSAGE: "M3 MESSage"
+  APP_NAME: "M3 APP"

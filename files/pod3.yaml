@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: m3pod003
+  labels:
+    app: ustimage3
+spec:
+  containers:
+    - name: m3container003
+      image: rajcosivadevops/ustimage
+      ports:
+        - containerPort: 80

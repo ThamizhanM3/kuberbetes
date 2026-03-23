@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: empty-pod
+spec:
+  containers:
+    - name: con1
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo welcome; sleep 5; done"]
+      volumeMounts:
+        - name: vol
+          mountPath: "/tmp/con1"
+    - name: con2
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo bad; sleep 10; done"]
+      volumeMounts:
+        - name: vol
+          mountPath: "/tmp/con2"
+  volumes:
+    - name: vol
+      emptyDir: {}

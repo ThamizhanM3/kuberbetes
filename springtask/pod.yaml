@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: m3springpod
+  labels:
+    app: m3spring
+spec:
+  containers:
+    - name: m3springcon
+      image: thamizhanm3/spring:v1
+      ports:
+        - containerPort: 80
+      env:
+        - name: APP_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: m3config
+              key: APP_MESSAGE
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: m3config
+              key: APP_NAME
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: m3secret
+              key: DB_PASSWORD

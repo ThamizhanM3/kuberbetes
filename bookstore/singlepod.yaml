@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bookstorepod1
+  labels:
+    app: bookstore
+spec:
+  containers:
+    - name: frontend
+      image: thamizhanm3/bookstore:frontend
+      env:
+       - name: API_BASE_URL
+         valueFrom:
+           configMapKeyRef:
+             name: bookstore-config
+             key: API_BASE_URL
+      ports:
+        - containerPort: 80
+#    - name: backend
+ #     image: thamizhanm3/bookstore:backend
+  #    imagePullPolicy: IfNotPresent
+   #   env:
+    #    - name: mongoDBURL
+     #     valueFrom:
+      #      secretKeyRef:
+       #       name: mongodb-uri
+        #      key: MONGODB_URI
+
+    #  ports:
+     #   - containerPort: 5555

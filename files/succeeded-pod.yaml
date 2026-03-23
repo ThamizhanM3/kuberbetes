@@ -1,0 +1,11 @@
+# succeeded-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: succeeded-pod
+spec:
+  restartPolicy: Never
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["echo", "Hello, Kubernetes!"]

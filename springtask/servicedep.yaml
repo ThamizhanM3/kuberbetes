@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: m3springdeployservice
+spec:
+  type: NodePort
+  selector:
+    app: m3springdep
+  ports:
+    - port: 80
+      targetPort: 8080
+      nodePort: 31002

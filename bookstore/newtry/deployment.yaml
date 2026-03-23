@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookstore-frontend
+  labels:
+    app: bookstore-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bookstore-frontend
+  template:
+    metadata:
+      labels:
+        app: bookstore-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: thamizhanm3/bookstore:frontend
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: bookstore-frontend-config
+          env:
+            - name: API_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: bookstore-frontend-config
+                  key: API_BASE_URL
+            - name: API_TIMEOUT
+              valueFrom:
+                configMapKeyRef:
+                  name: bookstore-frontend-config
+                  key: API_TIMEOUT

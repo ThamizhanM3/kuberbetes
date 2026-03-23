@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: m3sepringdep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: m3springdep
+  template:
+    metadata:
+      name: m3springname
+      labels:
+        app: m3springdep
+    spec:
+      containers:
+        - name: m3springdepcon
+          image: thamizhanm3/spring:v1
+          ports:
+            - containerPort: 80

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quizdeploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deploylabel
+  template:
+    metadata:
+      name: deploypod
+      labels:
+        app: deploylabel
+    spec:
+      containers:
+        - name: deploylabel
+          image: thamizhanm3/quiz:v1
+          ports:
+            - containerPort: 80
