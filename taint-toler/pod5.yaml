@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod5
+  namespace: taint-toll
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  tolerations:
+  - key: "hello"
+    operator: "Equal"
+    value: "hi"
+    effect: "NoExecute"
+    tolerationSeconds: 30

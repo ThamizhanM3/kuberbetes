@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod3
+  namespace: taint-toll
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  tolerations:
+  - key: "hi"
+    operator: "Equal"
+    value: "hello"
+    effect: "NoSchedule"
