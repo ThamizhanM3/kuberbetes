@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: give-ns-a-sa-access-to-ns-b
+  namespace: ns-b
+subjects:
+- kind: ServiceAccount
+  name: cross-ns-sa
+  namespace: ns-a   # IMPORTANT: SA belongs to ns-a
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: cross-ns-reader
