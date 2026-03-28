@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-pod
+  namespace: token-test
+spec:
+  automountServiceAccountToken: false
+  containers:
+  - name: test
+    image: busybox
+    command: ["sh", "-c", "sleep 3600"]

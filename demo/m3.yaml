@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: m3-pod
+  name: m3-pod
+spec:
+  containers:
+  - image: bitnami/kubectl:latest
+    name: m3-pod
+    command: ["sleep", "3600"]
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

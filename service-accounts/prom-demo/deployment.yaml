@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prom
+  namespace: prom-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prom
+  template:
+    metadata:
+      labels:
+        app: prom
+    spec:
+      serviceAccountName: prom-sa
+      containers:
+      - name: prom
+        image: prom/prometheus
+        ports:
+        - containerPort: 9090
