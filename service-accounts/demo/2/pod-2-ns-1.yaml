@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: aish-pod
-  namespace: training-room-6
+  name: pod-2-ns-1
+  namespace: ns-1
 spec:
   containers:
   - name: kubectl

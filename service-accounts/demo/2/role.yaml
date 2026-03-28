@@ -1,8 +1,8 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  namespace: training-room-6
-  name: aish-finder
+  namespace: ns-2
+  name: find-role
 rules:
 - apiGroups: [""]
   resources: ["pods"]

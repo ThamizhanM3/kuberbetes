@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: arun-pod
+  name: pod
   namespace: our-class
 spec:
-  serviceAccountName: find-chris-service-account
+  serviceAccountName: find-service-account
   containers:
-  - name: find-chris-container
+  - name: find-container
     image: bitnami/kubectl:latest
     command: ['sh', '-c', 'kubectl get pods && kubectl get services']
