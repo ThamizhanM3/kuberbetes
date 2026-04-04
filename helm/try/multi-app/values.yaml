@@ -1,5 +1,5 @@
-ns-1:
+ns01:
   namespace: ns-1
 
-ns-2:
+ns02:
   namespace: ns-2
