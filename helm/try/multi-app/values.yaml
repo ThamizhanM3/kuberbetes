@@ -1,5 +1,5 @@
-testing:
-  ns-1:
-    namespace: ns-1
-  ns-2:
-    namespace: ns-2
+ns-1:
+  namespace: ns-1
+
+ns-2:
+  namespace: ns-2
