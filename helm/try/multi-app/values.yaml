@@ -1,5 +1,7 @@
-ns01:
+ns-1:
   namespace: ns-1
+  date: hello
 
-ns02:
+ns-2:
   namespace: ns-2
+  date: hii

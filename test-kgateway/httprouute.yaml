@@ -1,0 +1,22 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: test-01-route
+  namespace: test-kgateway
+spec:
+  parentRefs:
+    - name: testing-gateway
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /gety
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: /
+      backendRefs:
+        - name: service-01
+          port: 80
