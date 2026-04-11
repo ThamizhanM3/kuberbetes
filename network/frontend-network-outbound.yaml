@@ -14,6 +14,6 @@ spec:
           name: backend-ns
     ports:
     - protocol: TCP
-      port: 5000
+      port: 80
   policyTypes:
   - Egress
