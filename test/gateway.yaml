@@ -1,7 +1,7 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: banking-gateway
+  name: banking-gateway-github
   namespace: banking-app
 spec:
   gatewayClassName: kgateway
